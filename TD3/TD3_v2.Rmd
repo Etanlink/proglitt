@@ -1,0 +1,62 @@
+---
+title: "TD3_v2"
+author: "Etanlink and Thomas Debuger"
+date: "January 2017"
+output:
+  html_document: default
+  pdf_document:
+    number_sections: yes
+subtitle: Statistical Analysis of Ping-Pong
+geometry: margin=1.5in, top=0.5in, bottom=0.5in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+
+# Real Ping-Pong Measurements
+
+```{r}
+pp1 <- read.csv("data/PP_size_1.csv");
+head(pp1);
+```
+
+## Plots of real ping-pong measurements
+
+### Plot 2
+```{r, fig.width=6, fig.height=3.5}
+plot(pp1$time*1000, ylab="Time (milliseconds)", xlab="Measurement Number");
+```
+C'est régulier dans le temps. (Etude partie basse, étude partie haute)
+ 
+## Statistical Summary
+
+A summary of a set of values can be easily obtained in R with (`df$time` is a vector with the measurements -- it represents the column `time` of the data frame `df`). So, calling the function `summary` on this vector gives:
+
+```{r pp1}
+summary(pp1$time*1000);
+```
+
+## Boxplot
+
+```{r, fig.width=2, fig.height=3.5}
+boxplot(pp1$time*1000, ylab="Time (milliseconds)")
+```
+
+## Histogram
+
+```{r pp1, fig.width=3}
+hist(pp1$time*1000, breaks=7, xlab="Time (milliseconds)", main="Histogram of Ping-Pong")
+```
+
+## Variability
+
+As we previously mentioned, ping-pong measurements suffer external influences that might affect estimations. As a consequence, we need to evaluate the variability. A common measure of variability is the standard deviation, calculated like this:
+```{r}
+sd(pp1$time*1000)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
