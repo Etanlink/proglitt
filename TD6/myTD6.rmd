@@ -1,0 +1,103 @@
+---
+title: "myTD6"
+author: "Etanlink"
+date: "7 mars 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Expérience du Duc de Toscane
+
+
+```{r}
+dice <- function(faces = 6, n = 100)
+{
+  sample(x = seq(from = 1, to = faces, by = 1), size=n, replace = TRUE);
+}
+
+dice(6,471)
+```
+Expérience de 471 tirages d'un dé à six faces.
+
+
+```{r}
+experiment <- function(faces = 6, n = 100)
+{
+  dice1 <- dice(faces,n);
+  dice2 <- dice(faces,n);
+  dice3 <- dice(faces,n);
+  
+  data.frame(Tirage1 = dice1,
+             Tirage2 = dice2,
+             Tirage3 = dice3);
+}
+
+#génère 5 tirages de dés à 6 faces
+experiment(6,5)
+```
+Trois ensembles de tirages de dés à 6 faces.
+
+
+```{r}
+library(dplyr);
+
+experiment(6,555) %>%
+  mutate(Sum = Tirage1 + Tirage2 + Tirage3) %>%
+  group_by(Sum) %>%
+  summarize(N=n());
+```
+Pour chaque valeur, somme des trois tirages.
+
+
+```{r}
+library(ggplot2);
+```
+
+```{r}
+experiment(6,555) %>%
+  mutate(Sum = Tirage1 + Tirage2 + Tirage3) %>%
+  ggplot(aes(x = as.factor(Sum))) +
+    geom_bar(aes(y = (..count..)/sum(..count..)), width = .3 ) +
+    xlab("Valeur de la somme") + ylab("Fréquence") +
+    ylim(0, NA) +
+    theme_bw()
+```
+Diagramme des fréquences d'apparition pour chaque valeur de la somme.
+
+
+
+Avec une taille d'échantillon plus grande (10 000) :
+```{r}
+experiment(6,10000) %>%
+  mutate(Sum = Tirage1 + Tirage2 + Tirage3) %>%
+  ggplot(aes(x = as.factor(Sum))) +
+    geom_bar(aes(y = (..count..)/sum(..count..)), width = .3 ) +
+    xlab("Valeur de la somme") + ylab("Fréquence") +
+    ylim(0, NA) +
+    theme_bw()
+```
+
+
+## Le duc de Toscane a-t-il raison ?
+
+```{r}
+experiment(6,100000) %>%
+  mutate(Sum = Tirage1 + Tirage2 + Tirage3) %>%
+  group_by(Sum) %>%
+  summarize(N=n()) %>%
+  mutate(frequence = N/sum(N)) %>%
+  mutate(variance = frequence * (1-frequence)) %>%
+  mutate(erreur = qnorm(0.975) * sqrt(variance) / sqrt(sum(N))); # intervalle de confiance à 95%
+```
+
+```{r}
+library(ggplot2)
+ggplot() +
+  geom_point(data = dfr; aes(x=as.factor()))
+
+```
+
