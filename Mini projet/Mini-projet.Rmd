@@ -1,0 +1,20 @@
+---
+title: "Mini-projet"
+author: "Amandine TIGNONE et Etienne OLIVIER"
+date: "21 mars 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problématique
+
+  - La corrélation entre le développement humain et l'argent est-elle plus ou moins importante que la corrélation entre
+  le développement humain et l'éducation ?
+
+
+## Méthodologie
+
+
