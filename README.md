@@ -4,7 +4,31 @@ Welcome to the Literate Programming public repository, part of the Miage L3.
 
 ## Final Project
 
+Le mini-projet doit être rendu le **vendredi 31 mars avant minuit**,
+sur le git avec un fichier R markdown (Rmd). Nous envisageons une
+présentation "ultra-courte" (5 minutes) pour convaincre, entre le mardi 11 et le jeudi 13 avril.
+
+[Cliquer ici pour selectionner **une tranche** d'horaire pour la soutenance de votre binôme.](https://framadate.org/dnI8QSNl5SfuU4Ly)
+
 - [Specification of the **Mini-Projet**](./Project.espec.md)
+- Groups and chosen subjects
+  - G2
+    - Baptiste et Dylan: *Consommation d'alcool chez les etudiants portugais*
+    - Julien et Anthony: *Kaggle, Homicide Reports, 1980-2014*
+    - Etienne et Amandine: *Rapport sur le développement humain en 2015 dans le monde*
+    - Thibault et Thibault: *Les matchs de foot européen de 2008 a 2016*
+    - Sory et Ali: *Les indicateur de résultats des lycées 2014 enseignement général, technologique et professionnel*
+    - Alexandre et Badr: *Français de l'étranger 2001-2013*
+    - Moutameni et Marco: *Global Terrorism Database 1970 - 2016*
+  - G1
+    - Aladin et Lucas: *Taux de pollution aux États-Unis de 2000 à 2016*
+    - Lucas et Antoine: *Dépenses des administrations publiques ventilées par fonction au cours du temps*
+    - Anis et Assane: *International Debt Statistics*
+    - Quentin et Andréas: *Recommend video games from 200k steam user interactions*
+    - Carine et Damien: *2K+ craft canned beers from the US and 500+ breweries in the United States*
+    - Laurent et Hanene: *World Happiness Report 2015 et 2016*
+    - Marie et Kathleen: *Médailles obtenues aux jeux olympiques d'hiver de 1924 à 2010*
+    - Pablo et Jules: *Linux Kernel Git Revision History*
 
 ## Presentations
 
