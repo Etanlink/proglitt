@@ -61,12 +61,15 @@ N° | Données  |	Signification
 L'**indice de développement humain (HDI)** est la moyenne géométrique calculée à partir de l'espérance de vie, l'indice d'éducation : (Nombre d’années moyen d’éducation +  nombre d’années d’études attendues) / 2, et le Revenu National Brut.
   
 ### Scientific workflow
-Nous avons commencé
 
-Observer les données
-	Graphes
-Observation des graphes
+Nous avons commencé, après avoir sélectionné nos données, par les observer et nous poser différentes questions. Il fallait en effet faire ressortir d'un ensemble de nombres et d'indices ce qui nous intéressait vraiment ainsi qu'une problématique particulière. 
+Nous avons donc essayé plusieurs types de graphes en nuage de points afin de trouver les bonnes corrélations et la meilleure manière de présenter les données.
 
+Nous avons choisi d'exposer nos graphes en grille pour une lecture rapide des informations et pour mettre en évidence plus aisément ces corrélations :
+ - Les abscisses de la 1ère ligne et les ordonnées de la 1ère colonne correspondent à l'espérance de vie,
+ - Les abscisses de la 2ème ligne et les ordonnées de la 2ème colonne correspondent au temps moyen d'éducation,
+ - Les abscisses de la 3ème ligne et les ordonnées de la 3ème colonne correspondent au RNB.
+ - La diagonale comprend l'indice de développement humain en ordonnée.
 
 
 ### Data representation choices
