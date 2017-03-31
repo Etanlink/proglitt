@@ -264,7 +264,7 @@ Ceci explique donc le fait qu'une variation du revenu influe autant sur l'espér
 
 ## Conclusion
 
-Pour conclure, on peut se demander quelles sont les limites de ce type d'indice ? Ne serait-ce pas aussi important de prendre en compte la démographie des pays étudiés ? En effet, ce facteur compte car un pays ayant un plus grand nombre d'habitants aura besoin d'un plus grand nombre d'enseignants pour un mÃªme ratio nombre d'étudiants/nombre d'enseignants.
+Pour conclure, on peut se demander quelles sont les limites de ce type d'indice ? Ne serait-ce pas aussi important de prendre en compte la démographie des pays étudiés ? En effet, ce facteur compte car un pays ayant un plus grand nombre d'habitants aura besoin d'un plus grand nombre d'enseignants pour un même ratio nombre d'étudiants/nombre d'enseignants.
 
 Par exemple, on a les données démographiques suivantes pour l'année 2013 :
 
