@@ -113,7 +113,7 @@ Nous avions à notre disposition 6 jeux de données permettant de se poser un gr
 Nous avons utilisé les données incluses dans le fichier `human_development.csv` qui est composé de 8 types d'informations :
 
 
-NÂ°            Données                                     Signification
+N°            Données                                     Signification
 --------      --------------                              ----------------
 1             HDI Rank                                    Classement en fonction du HDI
 2             Country                                     Les pays
