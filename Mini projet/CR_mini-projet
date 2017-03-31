@@ -1,0 +1,106 @@
+
+#Rapport sur le développement humain en 2015
+
+Mini-projet - Modèles Statistiques
+----------------------------------
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(readr)
+human_development <- read_csv("~/GitHub/proglitt/Mini projet/Données/human_development.csv")
+View(human_development)
+```
+
+
+## Sommaire
+
+
+## Introduction
+
+### Contexte
+Dans le cadre du mini-projet du cours de Modèles Statistiques, nous avons choisi de traiter les données relatives au développement humain en 2015. Nous avons trouvé ces données sur KAGGLE, à l'adresse suivante : www.kaggle.com/undp/human-development?
+
+NB : une inscription sur Kaggle est nécessaire pour obtenir les données.
+
+### Description de la problématique
+Les données établissent un classement de 194 pays selon l'indice de développement humain (HDI), calculé à partir de trois autres indices :
+ -  l'espérance de vie,
+ -  l'éducation,
+ -  le revenu national brut (par habitant).
+
+Ceci nous amène donc à notre problématique :
+" La corrélation entre le développement humain et l'argent est-elle plus ou moins importante que la corrélation entre le développement humain et l'éducation ? "
+Ou, autrement dit, comment influent ces indices sur le HDI ?
+
+
+
+
+## Méthodologie
+
+### Data clean-up procedures
+
+**Description des nos données**
+Nous avions à notre disposition 6 jeux de données permettant de se poser un grand nombre de questions, nous avons donc choisi un fichier en particulier pour pouvoir pousser l’analyse plus loin et répondre à notre problématique.
+Nous avons utilisé les données incluses dans le fichier `human_development.csv` qui est composé de 8 types d’informations :
+
+N° | Données  |	Signification
+-------- | ---
+1 | HDI Rank | Classement en fonction du HDI
+2 | Country	 | Les pays
+3 | Human Development Index (HDI) | Indice de développement (coefficient)
+4 | Life expectancy at birth | Espérance de vie (en années)
+5 | Expected years of education | Nombre d'années d'études attendues (après 6 ans)
+6 | Mean years of education | Nombre d'années moyennes d'éducation
+7 | Gross National Income (GNI) per capita | Revenu National Brut (RNB) par agent économique (*)
+8 | GNI per Capita Rank Minus HDI Rank | RNB par habitant moins le classement du HDI
+
+(*) agent économique = personne physique ou morale prenant des décisions d'ordre économique (il peut être un individu, un ménage, une entreprise, un pays, une collectivité territoriale ou encore une instance internationale).
+
+L'**indice de développement humain (HDI)** est la moyenne géométrique calculée à partir de l'espérance de vie, l'indice d'éducation : (Nombre d’années moyen d’éducation +  nombre d’années d’études attendues) / 2, et le Revenu National Brut.
+  
+### Scientific workflow
+
+Nous avons commencé, après avoir sélectionné nos données, par les observer et nous poser différentes questions. Il fallait en effet faire ressortir d'un ensemble de nombres et d'indices ce qui nous intéressait vraiment ainsi qu'une problématique particulière. 
+Nous avons donc essayé plusieurs types de graphes en nuage de points afin de trouver les bonnes corrélations et la meilleure manière de présenter les données.
+
+Nous avons choisi d'exposer nos graphes en grille pour une lecture rapide des informations et pour mettre en évidence plus aisément ces corrélations :
+ - Les abscisses de la 1ère ligne et les ordonnées de la 1ère colonne correspondent à l'espérance de vie,
+ - Les abscisses de la 2ème ligne et les ordonnées de la 2ème colonne correspondent au temps moyen d'éducation,
+ - Les abscisses de la 3ème ligne et les ordonnées de la 3ème colonne correspondent au RNB.
+ - La diagonale comprend l'indice de développement humain en ordonnée.
+
+
+### Data representation choices
+Pour illustrer au mieux notre analyse, nous avons fait le choix d'utiliser des nuages de points pour représenter chaque pays en fonction de deux indicateurs.
+Ce choix était évident car nous n'aurions pas pu répondre à notre question avec un autre type de graphe.
+
+
+## Analyse
+A mettre :
+Graphe récapitulatif
+Détails de chaque graphe avec petite explication/analyse sur chaque
+
+Pyramide de Maslow --> une fois les besoins primaires assouvis, l'individu peut se développer. L'argent le permet, l'éducation aussi dans une moindre mesure. Pour éduquer il faut pouvoir payer les personnes qui éduquent !
+
+Education est fortement lié au revenu !
+
+
+## Conclusion
+
+Pour conclure, on peut se demander quelles sont les limites de ce type d'indice ? Ne serait-ce pas aussi important de prendre en compte la démographie des pays étudiés ? En effet, ce facteur compte car un pays ayant un plus grand nombre d'habitants aura besoin d'un plus grand nombre d'enseignants pour un même ratio nombre d'étudiants/nombre d'enseignants.
+Par exemple, on a les données démographiques suivantes pour l'année 2013 :
+*NB : il s'agit d'informations arrondies pour avoir un ordre d'idée (recherche google = "démographie NOM_PAYS 2013").*
+ - Norvège : 5 millions d'habitants,
+ - Australie : 23 millions d'habitants,
+ - Russie : 144 millions d'habitants,
+ - Inde : 1,3 milliards d'habitants.
+Et ces pays sont respectivement 1er, 2ème, 50ème et 130ème dans le classement des pays par l'indice de développement humain.
+
+Cela semble logique : il paraît plus facile de mettre en place une politique d'éducation dans un pays avec une démographie plus faible, tout comme un Revenu National Brut élevé permet un certain investissement dans la prise en charge d'un grand nombre de facteurs influant sur le niveau de vie et le développement général d'un pays.
+
+
+## References
+  - www.kaggle.com/undp/human-development?
+  - Voir aussi l'explicatif fourni avec les données : index_calculation.pdf
