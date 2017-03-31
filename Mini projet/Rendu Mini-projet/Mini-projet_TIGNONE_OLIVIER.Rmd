@@ -1,5 +1,5 @@
 ---
-title: "Rapport sur le d�veloppement humain"
+title: "Rapport sur le développement humain"
 author: "Amandine TIGNONE et Etienne OLIVIER"
 date: "31 mars 2017"
 output:
@@ -23,14 +23,13 @@ knitr::opts_chunk$set(
 
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
-hd <- read_csv("~/GitHub/proglitt/Mini projet/Données/human_development.csv")
+hd <- read_csv("human_development.csv")
 
 library(dplyr)
 library(magrittr)
 library(ggplot2)
 library(ggrepel)
 library(ggplot2)
-
 ```
 
 
@@ -89,7 +88,7 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 ## Introduction
 
 ### Contexte
-Dans le cadre du mini-projet du cours de Modèles Statistiques, nous avons choisi de traiter les données relatives au développement humain en 2015. Nous avons trouvé ces données sur KAGGLE, à l'adresse suivante: www.kaggle.com/undp/human-development?
+Dans le cadre du mini-projet du cours de Modèles Statistiques, nous avons choisi de traiter les donnés relatives au développement humain en 2015. Nous avons trouvé ces données sur KAGGLE, à l'adresse suivante: www.kaggle.com/undp/human-development?
 
 *NB : une inscription sur Kaggle est nécessaire pour obtenir les données.*
 
@@ -110,17 +109,17 @@ Ou, autrement dit, comment influent ces indices sur le HDI ?
 
 ##### Description des nos données
 
-Nous avions à notre disposition 6 jeux de données permettant de se poser un grand nombre de questions, nous avons donc choisi un fichier en particulier pour pouvoir pousser l’analyse plus loin et répondre à notre problématique.
-Nous avons utilisé les données incluses dans le fichier `human_development.csv` qui est composé de 8 types d’informations :
+Nous avions à notre disposition 6 jeux de données permettant de se poser un grand nombre de questions, nous avons donc choisi un fichier en particulier pour pouvoir pousser l'analyse plus loin et répondre à notre problématique.
+Nous avons utilisé les données incluses dans le fichier `human_development.csv` qui est composé de 8 types d'informations :
 
 
-N°            Données                                     Signification
+NÂ°            Données                                     Signification
 --------      --------------                              ----------------
 1             HDI Rank                                    Classement en fonction du HDI
 2             Country                                     Les pays
 3             Human Development Index (HDI)               Indice de développement (coefficient)
 4             Life expectancy at birth                    Espérance de vie (en années)
-5             Expected years of education                 Nombre d'années d'études attendues (après 6 ans)
+5             Expected years of education                 Nombre d'années d'études attendues (apès 6 ans)
 6             Mean years of education                     Nombre d'années moyennes d'éducation
 7             Gross National Income (GNI) per capita      Revenu National Brut (RNB) par agent économique (*)
 8             GNI per Capita Rank Minus HDI Rank          RNB par habitant moins le classement du HDI
@@ -128,7 +127,7 @@ N°            Données                                     Signification
 
 (*) agent économique = personne physique ou morale prenant des décisions d'ordre économique (il peut être un individu, un ménage, une entreprise, un pays, une collectivité territoriale ou encore une instance internationale).
 
-L'**indice de développement humain (HDI)** est la moyenne géométrique calculée à partir de l'espérance de vie, l'indice d'éducation : (Nombre d’années moyen d’éducation +  nombre d’années d’études attendues) / 2, et le Revenu National Brut.
+L'**indice de développement humain (HDI)** est la moyenne géomètrique calculée à partir de l'espérance de vie, l'indice d'éducation : (Nombre d'années moyen d'éducation +  nombre d'années d'études attendues) / 2, et le Revenu National Brut.
 
   
 ### Scientific workflow
@@ -138,10 +137,10 @@ Nous avons donc essayé plusieurs types de graphes en nuage de points afin de tr
 
 Nous avons choisi d'exposer nos graphes en grille pour une lecture rapide des informations et pour mettre en évidence plus aisément ces corrélations :
 
- - Les abscisses de la 1ère ligne et les ordonnées de la 1ère colonne correspondent à l'espérance de vie,
- - Les abscisses de la 2ème ligne et les ordonnées de la 2ème colonne correspondent au temps moyen d'éducation,
- - Les abscisses de la 3ème ligne et les ordonnées de la 3ème colonne correspondent au RNB.
- - La diagonale comprend l'indice de développement humain en ordonnée.
+ - Les abscisses de la 1ère ligne et les ordonnees de la 1ère colonne correspondent à l'espérance de vie,
+ - Les abscisses de la 2ème ligne et les ordonnees de la 2ème colonne correspondent au temps moyen d'éducation,
+ - Les abscisses de la 3ème ligne et les ordonnees de la 3ème colonne correspondent au RNB.
+ - La diagonale comprend l'indice de developpement humain en ordonnee.
 
 
 
@@ -253,11 +252,11 @@ multiplot(g_leb_hdi,
 ```
 
 
-Une des premières observations que l'on peut faire est que l'on retrouve le lien entre le HDI et ses indicateurs de part la possibilité d'opérer une régression linéaire sur les nuages de points de la diagonale (Supérieur gauche à infèrieur droite) de la grille.
+Une des premiÃ¨res observations que l'on peut faire est que l'on retrouve le lien entre le HDI et ses indicateurs de part la possibilité d'opérer une régression linéaire sur les nuages de points de la diagonale (Supérieure gauche à inférieure droite) de la grille.
 
-Notre but étant de déterminer ce qui influe le plus entre l'argent et l'éducation sur le HDI, nous nous apercevons tout de suite en observant les deux premiers graphes de la troisième ligne que la part de l'éducation dans le développement humain est beaucoup moins importante que celle du revenu.
+Notre but étant de déterminer ce qui influe le plus entre l'argent et l'éducation sur le HDI, nous nous apercevons tout de suite en observant les deux premiers graphes de la troisiÃ¨me ligne que la part de l'éducation dans le développement humain est beaucoup moins importante que celle du revenu.
 
-On retrouve donc bien ici l'idée de la pyramide de Maslow où un individu doit d'abord assouvir ses besoins primaires (besoins physiologiques) avant de pouvoir se développer.
+On retrouve donc bien ici l'idée de la pyramide de Maslow oÃ¹ un individu doit d'abord assouvir ses besoins primaires (besoins physiologiques) avant de pouvoir se développer.
 Ceci explique donc le fait qu'une variation du revenu influe autant sur l'espérance de vie et sur le temps moyen d'éducation. Le revenu permet aux individus de se développer au sein des sociétés que ce soit d'un point de vue de la santé (Indice d'espérance de vie) ou de l'éducation.
 
 "Le développement humain passerait-il donc par l'argent ?"
@@ -265,24 +264,25 @@ Ceci explique donc le fait qu'une variation du revenu influe autant sur l'espér
 
 ## Conclusion
 
-Pour conclure, on peut se demander quelles sont les limites de ce type d'indice ? Ne serait-ce pas aussi important de prendre en compte la démographie des pays étudiés ? En effet, ce facteur compte car un pays ayant un plus grand nombre d'habitants aura besoin d'un plus grand nombre d'enseignants pour un même ratio nombre d'étudiants/nombre d'enseignants.
+Pour conclure, on peut se demander quelles sont les limites de ce type d'indice ? Ne serait-ce pas aussi important de prendre en compte la démographie des pays étudiés ? En effet, ce facteur compte car un pays ayant un plus grand nombre d'habitants aura besoin d'un plus grand nombre d'enseignants pour un mÃªme ratio nombre d'étudiants/nombre d'enseignants.
 
 Par exemple, on a les données démographiques suivantes pour l'année 2013 :
 
 *NB : il s'agit d'informations arrondies pour avoir un ordre d'idée (recherche google = "démographie NOM_PAYS 2013").*
 
- - Norvège : 5 millions d'habitants,
+ - NorvÃ¨ge : 5 millions d'habitants,
  - Australie : 23 millions d'habitants,
  - Russie : 144 millions d'habitants,
  - Inde : 1,3 milliards d'habitants.
 
 
-Et ces pays sont respectivement 1er, 2ème, 50ème et 130ème dans le classement des pays par l'indice de développement humain.
+Et ces pays sont respectivement 1er, 2Ã¨me, 50Ã¨me et 130Ã¨me dans le classement des pays par l'indice de développement humain.
 
-Cela semble logique : il paraît plus facile de mettre en place une politique d'éducation dans un pays avec une démographie plus faible, tout comme un Revenu National Brut élevé permet un certain investissement dans la prise en charge d'un grand nombre de facteurs influant sur le niveau de vie et le développement général d'un pays.
+Cela semble logique : il paraÃ®t plus facile de mettre en place une politique d'éducation dans un pays avec une démographie plus faible, tout comme un Revenu National Brut élevé permet un certain investissement dans la prise en charge d'un grand nombre de facteurs influant sur le niveau de vie et le développement général d'un pays.
 
 
 
 ## References
   - www.kaggle.com/undp/human-development?
   - Voir aussi l'explicatif fourni avec les données : index_calculation.pdf
+  
